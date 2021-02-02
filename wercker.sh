@@ -11,7 +11,7 @@ update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
 update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
 update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-11 100
 update-alternatives --remove-all lld
-update-alternatives --install /usr/bin/lld lld /usr/bin/lld-11 100
+update-alternatives --install /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-11 100
 update-alternatives --remove-all llvm
 update-alternatives --install /usr/bin/llvm-as llvm-as /usr/bin/llvm-as-11 100
 update-alternatives --install /usr/bin/llvm-ar llvm-ar /usr/bin/llvm-ar-11 100

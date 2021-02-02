@@ -17,8 +17,9 @@ export CCACHE_NOHASHDIR="true"
 export PATH="${TOOLCHAINDIR}/bin:${TOOLCHAINDIR}/lib:${TOOLCHAINDIR}/include:${PATH}"
 export KBUILD_BUILD_USER="mesziman"
 export KBUILD_BUILD_HOST="github"
-
-make -j ${buildspeed} deb-pkg \
+export LLVM=1
+export LLVM_IAS=1
+ make LLVM=1 LLVM_IAS=1 -j ${buildspeed} deb-pkg \
 CC="clang" \
 AR="llvm-ar" \
 NM="llvm-nm" \
