@@ -4,7 +4,7 @@ apt-get -qq update > /dev/null ;
 apt-get -qq install -y  dialog apt-utils > /dev/null ;
 apt-get remove -y clang;
 echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-apt-get -qq install -y lz4 git llvm clang-10 lld build-essential wget tar kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex qtbase5-dev wget rsync kmod cpio libelf-dev
+apt-get -qq install -y lz4 git llvm-11 clang-11 lld-11 build-essential wget tar kernel-package fakeroot libncurses5-dev libssl-dev ccache bison flex qtbase5-dev wget rsync kmod cpio libelf-dev
 export LOFASZ=$PWD;
 clanver=$(clang -v)
 echo "CLANG VERSION : $clanver"
