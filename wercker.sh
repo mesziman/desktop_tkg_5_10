@@ -19,13 +19,7 @@ update-alternatives --install /usr/bin/llvm-nm llvm-nm /usr/bin/llvm-nm-11 100
 update-alternatives --install /usr/bin/llvm-objcopy llvm-objcopy /usr/bin/llvm-objcopy-11 100
 update-alternatives --install /usr/bin/llvm-objdump llvm-objdump /usr/bin/llvm-objdump-11 100
 update-alternatives --install /usr/bin/llvm-strip llvm-strip /usr/bin/llvm-strip-11 100
-AR="llvm-ar" \
-NM="llvm-nm" \
-OBJCOPY="llvm-objcopy" \
-OBJDUMP="llvm-objdump" \
-STRIP="llvm-strip" \
-clanver=$(clang -v)
-echo "CLANG VERSION : $clanver"
+
 mkdir -p /pipeline/build/root/toolchain/gcc;
 cd /pipeline/build/root/toolchain/gcc;
 wget https://mirrors.edge.kernel.org/pub/tools/crosstool/files/bin/x86_64/10.1.0/x86_64-gcc-10.1.0-nolibc-x86_64-linux.tar.xz

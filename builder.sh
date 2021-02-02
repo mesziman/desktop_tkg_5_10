@@ -19,7 +19,7 @@ export KBUILD_BUILD_USER="mesziman"
 export KBUILD_BUILD_HOST="github"
 export LLVM=1
 export LLVM_IAS=1
- make LLVM=1 LLVM_IAS=1 -j ${buildspeed} deb-pkg \
+make LLVM=1 LLVM_IAS=1 -j ${buildspeed} deb-pkg \
 CC="clang" \
 AR="llvm-ar" \
 NM="llvm-nm" \
