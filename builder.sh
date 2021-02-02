@@ -25,7 +25,7 @@ NM="llvm-nm" \
 OBJCOPY="llvm-objcopy" \
 OBJDUMP="llvm-objdump" \
 STRIP="llvm-strip" \
-CROSS_COMPILE=${TOOLCHAINDIR}/bin/x86_64-linux- LOCALVERSION=-"tkg-clang-lto" -s;
+CROSS_COMPILE=${TOOLCHAINDIR}/bin/x86_64-linux- LOCALVERSION=-"tkg-clang-lto" -s 2>&1 | tee ${WERCKER_REPORT_ARTIFACTS_DIR}/errorlog.txt
 
 echo "======================VERIFY CLANG==============================="
 cat ./include/generated/compile.h
