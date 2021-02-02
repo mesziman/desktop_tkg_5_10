@@ -18,9 +18,14 @@ export PATH="${TOOLCHAINDIR}/bin:${TOOLCHAINDIR}/lib:${TOOLCHAINDIR}/include:${P
 export KBUILD_BUILD_USER="mesziman"
 export KBUILD_BUILD_HOST="github"
 
-
-PATH="${TOOLCHAINDIR}/bin:${TOOLCHAINDIR}/lib:${TOOLCHAINDIR}/include:${PATH}" \
-make -j ${buildspeed} deb-pkg CROSS_COMPILE=${TOOLCHAINDIR}/bin/x86_64-linux- LOCALVERSION=-"tkg-gcc" -s;
+make -j ${buildspeed} deb-pkg \
+CC="clang" \
+AR="llvm-ar" \
+NM="llvm-nm" \
+OBJCOPY="llvm-objcopy" \
+OBJDUMP="llvm-objdump" \
+STRIP="llvm-strip" \
+CROSS_COMPILE=${TOOLCHAINDIR}/bin/x86_64-linux- LOCALVERSION=-"tkg-clang-lto" -s;
 
 echo "======================VERIFY CLANG==============================="
 cat ./include/generated/compile.h
